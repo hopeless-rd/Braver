@@ -9,19 +9,17 @@
       grid-template-columns: 1fr 1fr;
       gap: rem(32);
   
-      @media (width <= 768px) {
+      @include mobile {
         grid-template-columns: 1fr;
       }
     }
   
     &__visual {
-      position: relative;
       border-radius: rem(16);
       overflow: hidden;
     }
   
     &__image {
-      width: 100%;
       height: auto;
       object-fit: cover;
     }
