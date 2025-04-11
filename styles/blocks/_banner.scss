@@ -2,8 +2,12 @@
 .banner {
     padding-bottom: rem(40);
 
+    @include mobile {
+      padding-bottom: 0;
+    }
+
   &__section {
-    margin-top: rem(170);
+    margin-top: rem(20);
 
     @include tablet {
       margin-top: 0;
@@ -21,33 +25,24 @@
     margin: 0 auto;
   }
 
-  &-image {
-    display: block;
+  &-img {
     width: 100%;
-    height: auto;
+    height: 100%;
     background: var(--color-light1);
     border-radius: rem(8);
   }
 
-  &__image {
-    max-height: rem(400);
-    user-select: none;
-
-
+  &__image { 
       &-wrapper {
         gap: rem(100);
         display: flex;
         transition: transform 0.3s ease;
-
-        @include tablet {
-          gap: rem(0); 
-        }
       }
   }
 
   &__play {
     &-circle {
-        top: -45%;
+        top: -50%;
         left: 50%;
         width: rem(100);
         height: rem(100);
@@ -67,14 +62,7 @@
         background: rgba(255, 255, 255, 0.5);
         }
 
-        @include mobile {
-            top: -43%;
-        }  
 
-        @include mobile {
-            width: rem(70);
-            height: rem(70);
-        }
     }
     
     &-icon {
