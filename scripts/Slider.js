@@ -31,18 +31,7 @@ class Slider {
       this.slides.forEach((slide, index) => {
         slide.style.display = index === this.currentIndex ? "block" : "none";
       });
-    } else {
-      // Для десктопа
-      const slideWidth = this.slides[0].offsetWidth;
-      if (direction === 1 && this.currentIndex + 2 < this.totalSlides) {
-        // Если двигаем вправо, и есть ещё слайды
-        this.currentIndex += direction;
-      } else if (direction === -1 && this.currentIndex > 0) {
-        // Если двигаем влево, и есть куда двигаться
-        this.currentIndex += direction;
-      }
 
-      this.sliderWrapper.style.transform = `translateX(-${this.currentIndex * slideWidth}px)`;
     }
   }
 
@@ -72,7 +61,6 @@ class Slider {
     window.addEventListener("resize", () => {
       this.initSlides();
       const slideWidth = this.slides[0].offsetWidth;
-      this.sliderWrapper.style.transform = `translateX(-${this.currentIndex * slideWidth}px)`;
     });
   }
 }
