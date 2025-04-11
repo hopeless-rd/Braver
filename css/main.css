@@ -416,11 +416,13 @@ button[aria-label] {
 @media (any-hover: hover) {
   .header__menu-item:hover {
     background-color: var(--color-grey);
+    border-radius: 0.375rem;
   }
 }
 @media (any-hover: none) {
   .header__menu-item:active {
     background-color: var(--color-grey);
+    border-radius: 0.375rem;
   }
 }
 @media (width <= 90.81125rem) {
@@ -454,12 +456,36 @@ button[aria-label] {
     border-radius: 0.375rem 0.375rem 0 0;
   }
 }
+@media (any-hover: hover) {
+  .header__menu-item:first-child:hover {
+    background-color: var(--color-grey);
+    border-radius: 0.375rem;
+  }
+}
+@media (any-hover: none) {
+  .header__menu-item:first-child:active {
+    background-color: var(--color-grey);
+    border-radius: 0.375rem;
+  }
+}
 .header__menu-item:last-child {
   border-radius: 0 0.375rem 0.375rem 0;
 }
 @media (width <= 78.62375rem) {
   .header__menu-item:last-child {
     border-radius: 0 0 0.375rem 0.375rem;
+  }
+}
+@media (any-hover: hover) {
+  .header__menu-item:last-child:hover {
+    background-color: var(--color-grey);
+    border-radius: 0.375rem;
+  }
+}
+@media (any-hover: none) {
+  .header__menu-item:last-child:active {
+    background-color: var(--color-grey);
+    border-radius: 0.375rem;
   }
 }
 .header__menu-link {
