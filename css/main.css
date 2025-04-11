@@ -1418,18 +1418,16 @@ button[aria-label] {
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
 }
-@media (width <= 768px) {
+@media (width <= 47.99875rem) {
   .selection__wrapper {
     grid-template-columns: 1fr;
   }
 }
 .selection__visual {
-  position: relative;
   border-radius: 1rem;
   overflow: hidden;
 }
 .selection__image {
-  width: 100%;
   height: auto;
   -o-object-fit: cover;
      object-fit: cover;
