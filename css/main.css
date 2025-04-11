@@ -1164,8 +1164,8 @@ button[aria-label] {
 }
 .dp-content {
   max-height: 0;
-  overflow: hidden;
   display: flex;
+  overflow-y: auto;
   flex-direction: column;
   color: var(--color-grey);
 }
