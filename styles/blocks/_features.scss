@@ -1,0 +1,59 @@
+@use '../helpers' as *;
+
+
+.features {
+
+    &__info {
+        background: var(--color-light1);
+        border-radius: rem(8);
+        padding: 0 rem(10);
+    }
+    &__item {
+        display: flex;
+        padding: 0.75rem;
+        justify-content: space-between;
+        align-items: center;
+        &:not(:nth-child(4), :nth-child(5)) {
+        border-bottom: rem(1) solid var(--color-grey); 
+        }
+        
+        &--full {
+            text-align: center;
+            font-weight: 600;
+
+            a {
+                color: var(--color-dark);
+                @include fluid-text(18, 16);
+            }
+        }
+      }
+
+  
+    &__title {
+        @include fluid-text(20, 18);
+        color: var(--color-grey);
+        margin-bottom: 0.25rem;
+    }
+  
+    &__value {
+        @include fluid-text(20, 18);
+        font-weight: 600;
+        color: var(--color-grey);
+
+        &--dark {
+            font-size: rem(32);
+            color: var(--color-dark);
+
+          }
+    }
+
+    &__buttons {
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        font-weight: 700;
+    }  
+  
+
+}

@@ -1,0 +1,143 @@
+@use '../helpers' as *;
+
+.header {
+    background: var(--color-dark);
+    padding-bottom: rem(22);
+    width: 100%;
+    position: relative;
+
+    &__body {
+        padding-top: rem(15);
+        &-inner{
+            display: flex;
+            align-items: center;
+            
+            @include tablet {
+                justify-content: space-between;
+            }
+        }    
+    }
+
+    &__overlay {
+        display: flex;
+        align-items: center;
+
+        @include tablet {
+            display: none;
+            flex-direction: column-reverse;
+            position: absolute;
+            gap: rem(30);
+            top: rem(75);
+            left: 0;
+            min-width: rem(300);
+            width: 100%;
+            min-height: 50%;
+            background-color: var(--color-dark);
+            z-index: 1000;
+            justify-content: center;
+
+            &.is-active {
+                display: flex;
+            }
+        }
+    }
+
+    &__menu {
+        margin-left: rem(43);
+        font-size: rem(16);
+
+        @include laptop {
+            margin-left: rem(13);
+            font-size: rem(14);
+        }
+
+        &-list {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            border-radius: rem(9);
+
+            @include tablet {
+                flex-direction: column;
+                margin: rem(-10) 0 rem(-20);
+            }
+          }
+
+        &-item {
+            color: var(--color-light);
+            padding: rem(12);
+            background-color: var(--color-burger);
+            cursor: pointer;
+            border-radius: rem(6);
+
+
+            @include hover {
+            background-color: var(--color-grey);
+            }
+
+            @include laptop {
+                padding: rem(10);
+            }
+
+            @include tablet {
+                width: 100%;
+                justify-content: center;
+            }
+
+            &::after {
+                content: "•";
+                position: relative;
+                font-size: rem(10);
+                align-self: center;
+
+              }
+
+            &:nth-child(3), &:nth-child(6) {
+                &::after {
+                    content: none;
+                }
+                padding-right: 0;
+            }
+        }
+
+        &-link {
+            text-decoration: none;
+            padding-right: rem(5);
+            transition: color 0.3s;
+        }
+    }
+
+    &__contact-info {
+        margin-left: rem(28);
+        @include fluid-text(16, 14);
+        color: var(--color-light);
+
+        @include hover {
+            color: var(--color-hover);
+        }
+
+        @include laptop {
+            margin-left: rem(13);
+        }
+
+        @include tablet {
+            order: -1;
+        }
+    }
+
+
+    &__order-button {
+        margin: 0 rem(20);
+        font-weight: 700;
+
+        @include laptop {
+            margin: 0 rem(5) 0 rem(13);
+        }
+
+        @include tablet {
+            margin-top: rem(-20);
+            order: -2;
+            margin-bottom: rem(20);
+        }
+    }
+}

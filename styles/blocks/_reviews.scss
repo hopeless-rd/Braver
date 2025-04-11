@@ -1,0 +1,94 @@
+@use '../helpers' as *;
+
+
+.reviews {
+  padding: rem(64) 0;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__title {
+    font-size: rem(48);
+    font-weight: 700;
+    color: var(--color-dark);
+    margin-bottom: rem(32);
+    text-transform: uppercase;
+  }
+
+  &__slider {
+    display: flex;
+    gap: rem(24);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: rem(16);
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &__card {
+    background: var(--color-light1);
+    border-radius: rem(8);
+    padding: rem(20);
+    display: flex;
+    gap: rem(12);
+    scroll-snap-align: start;
+  }
+
+  &__image {
+    border-radius: rem(8);
+    max-height: rem(123);
+    width: rem(80);
+    cursor: pointer;
+    
+    @include hover {
+      scale: 1.8;
+    }
+  }
+
+  &__text {
+    font-size: rem(14);
+    color: var(--color-dark);
+    line-height: 1.5;
+  }
+
+  &__link {
+    font-size: rem(14);
+    font-weight: 500;
+    color: var(--color-dark);
+    flex-direction: column-reverse;
+
+    @include hover {
+      color: var(--color-hover);
+    }
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: rem(32);
+  }
+
+  &__view-all {
+    @include fluid-text(20, 16);
+    color: var(--color-dark);
+    text-decoration: underline;
+  }
+
+  &__button {
+    width: 97%;    
+
+    @include tablet {
+      width: 94%;
+    }
+
+    @include mobile {
+      width: 92%;
+    }
+  }
+}

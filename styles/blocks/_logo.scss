@@ -1,0 +1,18 @@
+@use '../helpers' as *;
+
+.logo {
+    user-select: none;
+    &__image {
+        height: rem(40);
+        width: auto;
+        display: block;
+    }
+    &__span {
+        white-space: wrap;
+        line-height: 0.9rem;
+        color: var(--color-light);
+        margin: rem(5);
+        width: rem(70);
+        @include fluid-text(12, 10);
+    }
+} 

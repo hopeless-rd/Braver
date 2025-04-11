@@ -1,0 +1,28 @@
+@use 'normalize';
+@use 'fonts';
+@use 'variables';
+@use 'utils';
+@use 'globals';
+
+@use 'blocks/header';
+@use 'blocks/logo';
+@use 'blocks/burger-button';
+@use 'blocks/button';
+@use 'blocks/language-switcher';
+@use 'blocks/banner';
+@use 'blocks/video';
+@use 'blocks/main';
+@use 'blocks/features';
+@use 'blocks/truck';
+@use 'blocks/technical-specifications';
+@use 'blocks/delivery';
+@use 'blocks/truck-models';
+@use 'blocks/reviews';
+@use 'blocks/selection';
+@use 'blocks/footer';
+
+
+
+// .header, .main, .banner, .delivery, .technical-specifications, .delivery-payment-guarantee {
+//     display: none;
+// }

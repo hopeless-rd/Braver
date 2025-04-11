@@ -1,0 +1,22 @@
+@use '../helpers' as *;
+
+.truck {
+
+    &__title {
+        max-width: rem(820);
+    }
+    &__info {
+        line-height: 1;
+        margin-right: rem(20);
+        @include fluid-text(18, 16);
+    }
+
+    &__image {
+        user-select: none;
+    }
+    
+    &-image {
+        display: block;
+        width: 100%;
+    }
+}

@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Braver</title>
+    <link rel="stylesheet" href="./css/main.css" />
+    <script src="./scripts/main.js" type="module"></script>
+    <link rel="shortcut icon" href="./Icons/logo-icon.svg" type="image/x-icon" />
+  </head>
+<body>
+  <header class="header" data-js-header>
+    <div class="header__body">
+      <div class="header__body-inner container">
+        <a class="header__logo logo" href="./index.html" title="">
+          <img
+            class="logo__image"
+            src="./Icons/logo.svg"
+            alt="Логотип компании"
+          />
+          <span class="logo__span">Производство полуприцепов</span>
+        </a>
+
+        <div class="header__overlay" data-js-header-overlay>
+          <nav class="header__menu">
+            <ul class="header__menu-list">
+              <a class="header__menu-item" href="index.html"><li class="header__menu-link">Каталог</li></a>
+              <a class="header__menu-item" href="#"><li class="header__menu-link">О заводе</li></a>
+              <a class="header__menu-item" href="#"><li class="header__menu-link">Техника в наличии</li></a>
+              <a class="header__menu-item" href="#"><li class="header__menu-link">Сервис и гарантия</li></a>
+              <a class="header__menu-item" href="#"><li class="header__menu-link">Покупателям</li></a>
+              <a class="header__menu-item" href="#"><li class="header__menu-link">Контакты</li></a>
+            </ul>
+          </nav>
+
+          <div class="header__contact-info">
+            <label type="tel">8 (900) 777-77-77</label>
+          </div>
+          <div class="header__order-button">
+            <button class="button button--light">
+              Заказать звонок
+            </button>
+          </div>
+
+          <div class="header__language-switcher">
+            <input
+              type="checkbox"
+              id="language-toggle"
+              aria-label="Переключить язык"
+            />
+            <label for="language-toggle" class="language-switcher__label">
+              <span class="language-switcher__icon language-switcher__icon--ru">RU</span>
+              <span class="language-switcher__icon language-switcher__icon--en">EN</span>
+              <span class="language-switcher__slider"></span>
+            </label>
+          </div>
+        </div>
+
+        <button
+          class="header__burger-button burger-button visible-mobile"
+          type="button"
+          aria-label=""
+          title=""
+          data-js-header-burger-button
+        >
+          <span class="burger-button__line"></span>
+          <span class="burger-button__line"></span>
+          <span class="burger-button__line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <section class="banner banner__section">
+    <div class="banner__container container">
+      <div class="banner__slider">
+        <!-- Левая стрелка -->
+        <button class="slider-arrow slider-arrow--left" aria-label="Предыдущий слайд" data-js-slider-left>
+          <svg width="8" height="16" viewBox="0 0 8 16" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 14.6953L1.4882 9.18352C0.837272 8.53258 0.837272 7.46742 1.4882 6.81649L7 1.30469" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      
+        <!-- Контейнер с изображениями -->
+        <div class="banner__image-wrapper" data-js-banner>
+          <div class="banner__image">
+            <img src="./images/truck.svg" alt="Truck Left View" class="banner-image"/>
+          </div>
+          
+          <div class="banner__image">
+            <img src="./images/truck.svg" alt="Truck Right View" class="banner-image"/>
+            <button class="banner__play-circle" aria-label="Смотреть видео" data-js-play-circle>
+              <svg class="banner__play-icon" width="19" height="22" viewBox="0 0 19 22" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 9.26795C19.3333 10.0377 19.3333 11.9623 18 12.7321L3 21.3923C1.66666 22.1621 -1.05781e-06 21.1999 -9.90511e-07 19.6603L-2.33408e-07 2.33975C-1.6611e-07 0.800144 1.66667 -0.162106 3 0.607695L18 9.26795Z" fill="#202020"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      
+        <!-- Правая стрелка -->
+        <button class="slider-arrow slider-arrow--right" aria-label="Следующий слайд" data-js-slider-right>
+          <svg width="8" height="16" viewBox="0 0 8 16"  xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 14.6953L6.5118 9.18352C7.16273 8.53258 7.16273 7.46742 6.5118 6.81649L1 1.30469" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="video-overlay" id="videoOverlay" data-js-video-overlay>
+      <div class="video-content">
+        <button class="video-close" id="videoClose" aria-label="Закрыть видео" data-js-video-close>✕</button>
+        <iframe
+          id="videoIframe"
+          src=""
+          frameborder="0"
+          allow="autoplay"
+          data-js-video-frame>
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <section class="main main__section">
+    <div class="main__container container">
+      <div class="main__header">
+        <ul class="main__header-list">
+          <li class="main__header-item"><a class="main__header-link" href="#">Главная</a></li>
+          <li class="main__header-item"><a class="main__header-link" href="#">Каталог</a></li>
+          <li class="main__header-item"><a class="main__header-link" href="#">Зерновозы</a></li>
+          <li class="main__header-item"><a class="main__header-link active" href="#">Зерновозы бортовые 46-60 м³ с вынесенной осью</a></li>
+        </ul>
+
+        <div class="truck__title">
+          <h1>Зерновозы бортовые 46-60 м³ с вынесенной осью</h1>
+        </div>
+      </div>
+      <div class="main__features">
+        <div class="features__info">
+          <div class="features__item">
+            <span class="features__title">Объем</span>
+            <span class="features__value">46 - 60³</span>
+          </div>
+          <div class="features__item">
+            <span class="features__title">Количество осей</span>
+            <span class="features__value">3 оси</span>
+          </div>
+          <div class="features__item">
+            <span class="features__title">Снаряженная масса</span>
+            <span class="features__value">от 5 900 кг</span>
+          </div>
+          <div class="features__item">
+            <span class="features__title">Стоимость</span>
+            <span class="features__value features__value--dark">4 120 000 ₽</span>
+          </div>
+        </div>
+        <div class="features__buttons">
+          <button class="button button-small">Оставить заявку</button>
+          <button class="button button-small button-small--light button--grey">Получить консультацию</button>
+        </div>
+      </div>
+  
+      <div class="main__about-truck truck">
+
+        <div class="truck__info">
+          <div class="truck__subtitle">
+            <h2>О полуприцепе</h2>
+          </div>
+          <p>Полуприцеп Т4-16V/VK предназначен для перевозки грузов массой до 27 000 килограммов, при этом объем кузова равен 110,6 кубическим метрам. Особое внимание заслуживает тентовая ткань, обладающая плотностью, равной 900 граммов на квадратный метр. Данный полуприцеп шторно-бортовой (крыша и бока полуприцепа сдвигаются отдельно), что очень удобно при погрузке-разгрузке как с боков полуприцепа, так и с верхней части. Для большего комфорта эксплуатации, с наружной стороны имеется специальная ручка, предназначенная для сдвигания бокового тента.</p>
+          <p>Полуприцеп Т4-16V/VK предназначен для перевозки грузов массой до 27 000 килограммов, при этом объем кузова равен 110,6 кубическим метрам.</p>
+        </div>
+        <div class="truck__image">
+          <img class="truck-image" src="/images/truck-constructor.svg" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="technical-specifications">
+    <div class="specifications__container container">
+      <div class="specifications__tabs">
+        <div class="specifications__tab active">Технические характеристики</div>
+        <div class="specifications__tab">Комплектация</div>
+        <div class="specifications__tab">Техническая документация</div>
+      </div>
+      <div class="specifications__content">
+        <div class="specifications__row">
+          <div class="specifications__title">Габаритные размеры</div>
+          <div class="specifications__details">
+            <p>длина: 12 100 мм</p>
+            <p>ширина: 2 550 мм</p>
+            <p>высота: 3 310 мм</p>
+          </div>
+        </div>
+        <div class="specifications__row">
+          <div class="specifications__title">Объем</div>
+          <div class="specifications__details">
+            <p>46 - 60³</p>
+          </div>
+        </div>
+        <div class="specifications__row">
+          <div class="specifications__title">Количество осей</div>
+          <div class="specifications__details">
+            <p>4 оси</p>
+          </div>
+        </div>
+        <div class="specifications__row">
+          <div class="specifications__title">Снаряженная масса</div>
+          <div class="specifications__details">
+            <p>от 7 200 кг</p>
+          </div>
+        </div>
+        <div class="specifications__row">
+          <div class="specifications__title">Количество секций</div>
+          <div class="specifications__details">
+            <p>1 секция: 8 м³</p>
+            <p>2 секция: 10,3 м³</p>
+            <p>3 секция: 13,7 м³</p>
+            <p>Объемы секций указаны по порядку от ССУ</p>
+          </div>
+        </div>
+        <div class="specifications__row">
+          <div class="specifications__title">Подвеска и шины</div>
+          <div class="specifications__details">
+            <p>2 оси подъемные тормозные механизмы барабанного / дискового типа шины (на усмотрение производителя) размерностью 385/65 R22,5 с диском - 8 + 1 шт.</p>
+          </div>
+        </div>
+        <div class="specifications__row">
+          <div class="specifications__title">Тормозная система</div>
+          <div class="specifications__details">
+            <p>пневматическая двухконтурная</p>
+          </div>
+        </div>
+        <div class="specifications__row">
+          <div class="specifications__title">Электрооборудование</div>
+          <div class="specifications__details">
+            <p>электрооборудование Aspoeck / Hella / Ermax или аналог</p>
+          </div>
+        </div>
+        <div class="specifications__row">
+          <div class="specifications__title">Высота ССУ</div>
+          <div class="specifications__details">
+            <p>1 150 мм</p>
+          </div>
+        </div>
+        <div class="specifications__row">
+          <div class="specifications__title">Окраска</div>
+          <div class="specifications__details">
+            <p>обработка поверхности в добеструйной камере покрытие грунтом с содержанием антикоррозийных элементов окраска премиальной эмалью</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+<section class="delivery-payment-guarantee">
+  <div class="dp-container container">
+    <div class="dp-section" id="delivery">
+      <div class="dp-header">
+        <span class="dp-number">01</span>
+        <h2 class="dp-title">Доставка</h2>
+        <button class="dp-arrow dp-arrow-closed">
+          <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1.5 1.5L17.5 17.5M17.5 17.5L17.5 1.5M17.5 17.5L1.5 17.5" stroke="#202020" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+      <div class="dp-content">
+        <p>Компания Braver доставит прицепную технику до адреса Вашей компании, условия доставки обсуждаются индивидуально с учетом количества приобретаемой техники и Вашей территориальной удаленности.</p>
+        <p>Мы доставляем в города:</p>
+        <ul>
+          <li>Москва</li>
+          <li>Санкт-Петербург</li>
+          <li>Нижний Новгород</li>
+          <li>Екатеринбург</li>
+          <li>Владивосток</li>
+          <li>Новосибирск</li>
+          <li>Казань</li>
+          <li>Каров</li>
+        </ul>
+      </div>
+    </div>
+    <div class="dp-section" id="payment">
+      <div class="dp-header">
+        <span class="dp-number">02</span>
+        <h2 class="dp-title">Оплата</h2>
+        <button class="dp-arrow dp-arrow-closed">
+          <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1.5 1.5L17.5 17.5M17.5 17.5L17.5 1.5M17.5 17.5L1.5 17.5" stroke="#202020" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+      <div class="dp-content">
+        <!-- Здесь можно добавить информацию об оплате -->
+      </div>
+    </div>
+    <div class="dp-section" id="guarantee">
+      <div class="dp-header">
+        <span class="dp-number">03</span>
+        <h2 class="dp-title">Гарантии</h2>
+        <button class="dp-arrow dp-arrow-closed">
+          <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1.5 1.5L17.5 17.5M17.5 17.5L17.5 1.5M17.5 17.5L1.5 17.5" stroke="#202020" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+      <div class="dp-content">
+        <!-- Здесь можно добавить информацию о гарантиях -->
+      </div>
+    </div>
+  </div>
+</section>
+
+  
+  
+<section class="truck-models">
+  <div class="container">
+    <header class="truck-models__header">
+      <h2 class="truck-models__title">Может быть интересно</h2>
+    </header>
+    <div class="truck-models__grid">
+      <article class="truck-models__card">
+        <div class="truck-models__image">
+          <img src="./images/truck-models1.svg" alt="Зерновозы бортовые 46-60 м³ с вынесенной осью">
+        </div>
+        <div class="truck-models__content">
+          <h3 class="truck-models__name">Зерновозы бортовые 46-60 м³ с вынесенной осью</h3>
+          <ul class="truck-models__specs">
+            <li><strong>Объем:</strong> 46 - 60³</li>
+            <li><strong>Оси:</strong> 3 оси</li>
+            <li><strong>Масса:</strong> от 5 900 кг</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="truck-models__card">
+        <div class="truck-models__badge">В наличии</div>
+        <div class="truck-models__image">
+          <img src="./images/truck-models2.svg" alt="Бортовой полуприцеп 13,62 м">
+        </div>
+        <div class="truck-models__content">
+          <h3 class="truck-models__name">Бортовой полуприцеп 13,62 м</h3>
+          <ul class="truck-models__specs">
+            <li><strong>Объем:</strong> 46 - 60³</li>
+            <li><strong>Оси:</strong> 3 оси</li>
+            <li><strong>Масса:</strong> от 5 900 кг</li>
+            <li><strong>Стоимость:</strong> 4 120 000 ₽</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="truck-models__card">
+        <div class="truck-models__image">
+          <img src="./images/truck-models3.svg" alt="Облегченные зерновозы бортовые 46-60 м³">
+        </div>
+        <div class="truck-models__content">
+          <h3 class="truck-models__name">Облегченные зерновозы бортовые 46-60 м³</h3>
+          <ul class="truck-models__specs">
+            <li><strong>Объем:</strong> 46 - 60³</li>
+            <li><strong>Оси:</strong> 3 оси</li>
+            <li><strong>Масса:</strong> от 5 900 кг</li>
+            <li><strong>Стоимость:</strong> 4 120 000 ₽</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="reviews">
+  <div class="container">
+    <div class="reviews__header">
+    <h2 class="reviews__title">Отзывы</h2>
+
+    <a href="#" class="reviews__view-all">Смотреть все</a>
+
+    </div>
+    <div class="reviews__slider" data-js-slider>
+      <article class="reviews__card">
+        <img src="./images/scan.png" alt="Скан отзыва клиента" class="reviews__image" />
+        <p class="reviews__text">
+          ООО «СпецТех»: техника прибыла в срок, соответствует описанию. Благодарим компанию BRAVER за сотрудничество!
+        </p>
+        <a href="#" class="reviews__link">Подробнее</a>
+      </article>
+      <article class="reviews__card">
+        <img src="./images/scan.png" alt="Скан отзыва клиента" class="reviews__image" />
+        <p class="reviews__text">
+          ООО «СпецТех»: техника прибыла в срок, соответствует описанию. Благодарим компанию BRAVER за сотрудничество!
+        </p>
+        <a href="#" class="reviews__link">Подробнее</a>
+      </article>
+      <article class="reviews__card">
+        <img src="./images/scan.png" alt="Скан отзыва клиента" class="reviews__image" />
+        <p class="reviews__text">
+          ООО «СпецТех»: техника прибыла в срок, соответствует описанию. Благодарим компанию BRAVER за сотрудничество!
+        </p>
+        <a href="#" class="reviews__link">Подробнее</a>
+      </article>
+    </div>
+    <div class="reviews__actions">
+      <button class="button  reviews__button button-small">Оставить отзыв</button>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<section class="selection">
+  <div class="container selection__wrapper">
+    <div class="selection__visual">
+      <img src="./images/selection.png" alt="Техника Braver" class="selection__image">
+    </div>
+    <form class="selection__form">
+      <input type="text" placeholder="Ваше имя" required>
+      <input type="tel" placeholder="Телефон" required>
+      <input type="email" placeholder="Email" required>
+      <label class="selection__checkbox">
+        <input type="checkbox" required>
+        <span class="selection__span">Нажимая на кнопку, я принимаю условия <a class="selection__href" href="#">Политики конфиденциальности</a></span>
+      </label>
+      <button type="submit" class="button button-small">Отправить</button>
+    </form>
+  </div>
+</section>
+
+
+
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__column footer__column--left">
+      <a class="header__logo logo" href="./index.html" title="">
+        <img
+          class="logo__image"
+          src="./Icons/logo.svg"
+          alt="Логотип компании"
+        />
+        <span class="logo__span">Производство полуприцепов</span>
+      </a>
+      <input type="text" class="footer__search" placeholder="Поиск">
+      <div class="footer__rating">
+        <img src="./images/yandex.png" alt="Оценка">
+      </div>
+    </div>
+
+    <div class="footer__column">
+      <h4>Контакты</h4>
+      <p>8 (900) 777-77-77</p>
+      <p>info@braver.ru</p>
+      <p>г. Москва, ул. Тверская 44/1, каб. 6</p>
+    </div>
+
+    <div class="footer__column">
+      <h4>Навигация</h4>
+      <ul>
+        <li><a href="#">О заводе</a></li>
+        <li><a href="#">Каталог</a></li>
+        <li><a href="#">Доставка</a></li>
+        <li><a href="#">Гарантия</a></li>
+        <li><a href="#">Контакты</a></li>
+      </ul>
+      <button class="button button--light">Заказать звонок</button>
+    </div>
+  </div>
+
+  <div class="container footer__bottom">
+    <p>© 2024 BRAVER</p>
+    <a href="#">Политика конфиденциальности</a>
+  </div>
+</footer>
+
+
+
+
+
+  
+  
+      
+  
+</body>
+</html>
+

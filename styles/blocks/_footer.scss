@@ -1,0 +1,71 @@
+@use '../helpers' as *;
+.footer {
+    background: var(--color-dark);
+    color: var(--color-light);
+    padding: rem(64) 0 rem(32);
+  
+    &__inner {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(rem(240), 1fr));
+      gap: rem(32);
+      margin-bottom: rem(32);
+    }
+  
+    &__logo {
+      width: rem(120);
+      height: auto;
+      margin-bottom: rem(8);
+    }
+  
+    &__tagline {
+      font-size: rem(14);
+      margin-bottom: rem(16);
+    }
+  
+    &__search {
+      padding: rem(10);
+      border-radius: rem(6);
+      border: none;
+      max-width: rem(240);
+      background: var(--color-burger);
+      margin-bottom: rem(16);
+      color: var(--color-light);
+
+    }
+  
+    &__rating {
+      display: flex;
+      align-items: center;
+      gap: rem(8);
+      font-size: rem(14);
+    }
+  
+    &__column {
+      display: flex;
+      flex-direction: column;
+      gap: rem(12);
+  
+      h4 {
+        font-size: rem(16);
+        font-weight: 600;
+      }
+  
+      ul {
+        padding: 0;
+        display: flex;
+        list-style: none;
+        flex-direction: column;
+        gap: rem(6);
+      }
+
+    }
+  
+    &__bottom {
+      border-top: 1px solid var(--color-grey);
+      padding-top: rem(16);
+      display: flex;
+      justify-content: space-between;
+      font-size: rem(12);
+    }
+  }
+  

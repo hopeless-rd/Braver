@@ -1,0 +1,25 @@
+@use 'helpers' as *;
+
+:root {
+    --color-light: #FFFFFF;
+    --color-dark: #202020; 
+    --color-light1: #F4F4F4;
+    --color-grey: #7B7B7B;
+    --color-green: #5BCE89;
+    --color-red: #F4371C;
+    --color-burger: #2b2b2b; 
+    --color-hover: #cbcbcb;
+
+    --font-family-base: 'HeventicalNeue';
+
+    --container-width: #{rem(1600)};
+    --container-padding-x: #{rem(16)}; 
+
+    --transition-duration: 0.2s;
+
+    @include laptop {
+        --container-width: #{rem(1280)};
+        --container-padding-x: #{rem(12)}; 
+
+    }
+}

@@ -1,0 +1,112 @@
+@use '../helpers' as *;
+
+
+
+.truck-models {
+  padding: rem(64) 0;
+  background-color: var(--color-light);
+
+  &__header {
+    margin-bottom: rem(32);
+  }
+
+  &__title {
+    font-size: rem(40);
+    font-weight: 700;
+    color: var(--color-dark);
+    text-transform: uppercase;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: rem(24);
+
+    @include laptop {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include tablet {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__card {
+    background-color: var(--color-light1);
+    padding: rem(20);
+    border-radius: rem(12);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: transform 0.3s ease;
+
+    @media (hover: hover) {
+      &:hover {
+        transform: translateY(rem(-4));
+      }
+    }
+  }
+
+  &__badge {
+    position: absolute;
+    top: rem(12);
+    right: rem(12);
+    background-color: var(--color-light);
+    color: var(--color-dark);
+    font-size: rem(12);
+    font-weight: 600;
+    padding: rem(4) rem(10);
+    border-radius: rem(6);
+    z-index: 1;
+  }
+
+  &__image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: rem(240);
+    margin-bottom: rem(16);
+    border-radius: rem(8);
+    background-color: var(--color-light1);
+
+    img {
+      max-height: 100%;
+      max-width: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: rem(8);
+  }
+
+  &__name {
+    font-size: rem(18);
+    font-weight: 700;
+    color: var(--color-dark);
+  }
+
+  &__specs {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      display: flex;
+      justify-content: space-between;
+      font-size: rem(14);
+      color: var(--color-dark);
+      border-bottom: 1px solid var(--color-grey);
+      padding: rem(4) 0;
+
+      strong {
+        font-weight: 600;
+        color: var(--color-grey);
+        margin-right: rem(12);
+        min-width: rem(140);
+      }
+    }
+  }
+}
