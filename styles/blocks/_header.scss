@@ -70,6 +70,8 @@
 
             @include hover {
             background-color: var(--color-grey);
+            border-radius: rem(6);
+
             }
 
             @include laptop {
@@ -98,9 +100,16 @@
 
             &:first-child {
                 border-radius: rem(6) 0 0 rem(6);
+                
                 @include tablet {
                     border-radius: rem(6) rem(6) 0 0;
                 }
+
+                @include hover {
+                    background-color: var(--color-grey);
+                    border-radius: rem(6);
+        
+                    }
             }
 
             &:last-child {
@@ -109,6 +118,11 @@
                 @include tablet {
                     border-radius: 0 0 rem(6) rem(6);
                 }
+                @include hover {
+                    background-color: var(--color-grey);
+                    border-radius: rem(6);
+        
+                    }
             }
         }
 
