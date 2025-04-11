@@ -4,7 +4,6 @@
     background: var(--color-dark);
     padding-bottom: rem(22);
     width: 100%;
-    position: relative;
 
     &__body {
         padding-top: rem(15);
@@ -68,8 +67,6 @@
             padding: rem(12);
             background-color: var(--color-burger);
             cursor: pointer;
-            border-radius: rem(6);
-
 
             @include hover {
             background-color: var(--color-grey);
@@ -97,6 +94,21 @@
                     content: none;
                 }
                 padding-right: 0;
+            }
+
+            &:first-child {
+                border-radius: rem(6) 0 0 rem(6);
+                @include tablet {
+                    border-radius: rem(6) rem(6) 0 0;
+                }
+            }
+
+            &:last-child {
+                border-radius: 0 rem(6) rem(6) 0;
+
+                @include tablet {
+                    border-radius: 0 0 rem(6) rem(6);
+                }
             }
         }
 
